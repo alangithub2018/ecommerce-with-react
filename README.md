@@ -9,4 +9,12 @@ Currently, two official plugins are available:
 
 # Ecommerce with React
 
-Work in progress
+1. Initiate the creation of the project using the following command:
+   ´´´
+   npx create-vite projectName
+   ´´´
+
+2. Add eslint to follow the best coding practices
+   ´´´
+   npx eslint --init
+   ´´´

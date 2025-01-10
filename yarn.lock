@@ -331,10 +331,15 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@eslint/js@9.17.0", "@eslint/js@^9.17.0":
+"@eslint/js@9.17.0":
   version "9.17.0"
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-9.17.0.tgz#1523e586791f80376a6f8398a3964455ecc651ec"
   integrity sha512-Sxc4hqcs1kTu0iID3kcZDW3JHq2a77HO9P8CP6YEA/FpH3Ll8UXE2r/86Rz9YJLKme39S9vU5OWNjC6Xl0Cr3w==
+
+"@eslint/js@^9.18.0":
+  version "9.18.0"
+  resolved "https://registry.yarnpkg.com/@eslint/js/-/js-9.18.0.tgz#3356f85d18ed3627ab107790b53caf7e1e3d1e84"
+  integrity sha512-fK6L7rxcq6/z+AaQMtiFTkvbHkBLNlwyRxHpKawP0x3u9+NC6MQTnFW+AdpwC6gfHTW0051cokQgtTN2FqlxQA==
 
 "@eslint/object-schema@^2.1.5":
   version "2.1.5"
@@ -1044,7 +1049,7 @@ eslint-plugin-react-refresh@^0.4.16:
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-refresh/-/eslint-plugin-react-refresh-0.4.16.tgz#149dbc9279bd16942409f1c1d2f0dce3299430ef"
   integrity sha512-slterMlxAhov/DZO8NScf6mEeMBBXodFUolijDvrtTxyezyLoTQaa73FyYus/VbTdftd8wBgBxPMRk3poleXNQ==
 
-eslint-plugin-react@^7.37.2:
+eslint-plugin-react@^7.37.3:
   version "7.37.3"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.37.3.tgz#567549e9251533975c4ea9706f986c3a64832031"
   integrity sha512-DomWuTQPFYZwF/7c9W2fkKkStqZmBd3uugfqBYLdkZ3Hii23WzZuOLUskGxB8qkSKqftxEeGL1TB2kMhrce0jA==
