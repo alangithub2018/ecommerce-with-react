@@ -18,3 +18,18 @@ Currently, two official plugins are available:
    ´´´
    npx eslint --init
    ´´´
+
+3. Add react-router-dom to navigate between pages
+   ´´´
+   yarn add react-router-dom
+   ´´´
+
+4. Add tailwindcss to our project
+   ´´´
+   yarn add -D tailwindcss postcss autoprefixer
+   ´´´
+
+5. Initialize tailwindcss configuration
+   ´´´
+   npx tailwindcss init -p
+   ´´´
