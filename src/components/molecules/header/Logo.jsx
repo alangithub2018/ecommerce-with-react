@@ -1,12 +1,15 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const Logo = () => {
   return (
-    <div>
-      <img
-        src="https://www.reshot.com/preview-assets/icons/ZSM4LVY56G/beer-ZSM4LVY56G.svg"
-        alt="Logo eCommerce"
-      />
+    <div className="flex">
+      <Link to="/">
+        <img
+          src="https://uxwing.com/wp-content/themes/uxwing/download/e-commerce-currency-shopping/shopping-bag-white-icon.png"
+          alt="logo"
+          className="w-10 h-10"
+        />
+      </Link>
     </div>
   );
 };

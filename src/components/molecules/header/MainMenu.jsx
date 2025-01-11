@@ -1,19 +1,26 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const MainMenu = () => {
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
+      <nav className="w-full">
+        <ul className="flex justify-end text-gray-100">
+          <li className="flex items-center">
+            <Link
+              className="menu-item"
+              to="/"
+            >
+              Home
+            </Link>
           </li>
-          <li>
-            <Link to="/products">Products</Link>
+          <li className="flex items-center">
+            <Link
+              className="menu-item"
+              to="/products"
+            >
+              Products
+            </Link>
           </li>
-          <li>About</li>
-          <li>Contact</li>
         </ul>
       </nav>
     </>

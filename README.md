@@ -33,3 +33,14 @@ Currently, two official plugins are available:
    ´´´
    npx tailwindcss init -p
    ´´´
+
+6. Add axios for making http requests
+   ´´´
+   yarn add axios
+   ´´´
+
+7. Add prettier to the project for code formatting by executing the following command
+   ´´´
+   yarn add
+   -D prettier eslint-plugin-prettier eslint-config-prettier
+   ´´´
