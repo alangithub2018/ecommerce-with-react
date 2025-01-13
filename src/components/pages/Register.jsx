@@ -1,31 +1,42 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { API_URL } from "../../constants/env";
-import { setToken } from "../../helpers/auth";
 import { useNavigate } from "react-router-dom";
 import ErrorTemplate from "../../template/Error";
 import LoginTemplate from "../../template/Login";
+import Modal from "../../template/Modal";
 
-const Login = () => {
+const Register = () => {
   const nav = useNavigate();
   const [error, setError] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => {
+    setIsOpen(false);
+    nav("/login");
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError();
     const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData);
+    const data = {
+      details: {
+        fullname: formData.get("fullname"),
+      },
+      email: formData.get("email"),
+      password: formData.get("password"),
+    };
 
     await axios
-      .post(`${API_URL}/public/login`, JSON.stringify(data), {
+      .post(`${API_URL}/public/users`, JSON.stringify(data), {
         headers: {
           "Content-Type": "application/json",
         },
       })
       .then((response) => {
-        console.log(response);
-        setToken(response.data.token);
-        nav("/");
+        openModal();
       })
       .catch((error) => {
         console.log(error);
@@ -34,11 +45,26 @@ const Login = () => {
   };
 
   return (
-    <LoginTemplate title={"Sign in to your account"}>
+    <LoginTemplate title={"Register new account"}>
       <form
         className="space-y-6"
         onSubmit={handleSubmit}
       >
+        <div>
+          <label className="block text-sm/6 font-medium text-gray-900">
+            Full name
+          </label>
+          <div className="mt-2">
+            <input
+              type="text"
+              name="fullname"
+              id="fullname"
+              autoComplete="fullname"
+              required
+              className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+            />
+          </div>
+        </div>
         <div>
           <label className="block text-sm/6 font-medium text-gray-900">
             Email address
@@ -60,14 +86,6 @@ const Login = () => {
             <label className="block text-sm/6 font-medium text-gray-900">
               Password
             </label>
-            <div className="text-sm">
-              <a
-                href="#"
-                className="font-semibold text-indigo-600 hover:text-indigo-500"
-              >
-                Forgot password?
-              </a>
-            </div>
           </div>
           <div className="mt-2">
             <input
@@ -81,12 +99,19 @@ const Login = () => {
           </div>
         </div>
 
-        <div>
+        <div className="flex space-x-2">
+          <button
+            type="button"
+            onClick={() => nav("/login")}
+            className="flex w-60 justify-center rounded-md bg-gray-500 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500"
+          >
+            Cancel
+          </button>
           <button
             type="submit"
-            className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="flex w-60 justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            Sign in
+            Sign up
           </button>
         </div>
         {error && (
@@ -96,8 +121,15 @@ const Login = () => {
           />
         )}
       </form>
+      {isOpen && (
+        <Modal
+          closeModal={closeModal}
+          title="Success"
+          message="Your account has been created successfully"
+        />
+      )}
     </LoginTemplate>
   );
 };
 
-export default Login;
+export default Register;

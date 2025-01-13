@@ -41,6 +41,5 @@ Currently, two official plugins are available:
 
 7. Add prettier to the project for code formatting by executing the following command
    ´´´
-   yarn add
-   -D prettier eslint-plugin-prettier eslint-config-prettier
+   yarn add -D prettier eslint-plugin-prettier eslint-config-prettier
    ´´´
