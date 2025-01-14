@@ -24,7 +24,7 @@ const Login = () => {
       })
       .then((response) => {
         console.log(response);
-        setToken(response.data.token);
+        setToken(response?.data?.data?.token);
         nav("/");
       })
       .catch((error) => {
