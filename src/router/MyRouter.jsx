@@ -5,6 +5,7 @@ import Products from "../components/pages/Products";
 import App from "../template/App";
 import Login from "../components/pages/Login";
 import Register from "../components/pages/Register";
+import Form from "../components/pages/admin/products/Form";
 
 const MyRouter = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const MyRouter = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: "/admin/products/add",
+    element: <Form />,
   },
 ]);
 
