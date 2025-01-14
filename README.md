@@ -10,36 +10,43 @@ Currently, two official plugins are available:
 # Ecommerce with React
 
 1. Initiate the creation of the project using the following command:
-   ´´´
-   npx create-vite projectName
-   ´´´
+
+```
+npx create-vite projectName
+```
 
 2. Add eslint to follow the best coding practices
-   ´´´
-   npx eslint --init
-   ´´´
+
+```
+npx eslint --init
+```
 
 3. Add react-router-dom to navigate between pages
-   ´´´
-   yarn add react-router-dom
-   ´´´
+
+```
+yarn add react-router-dom
+```
 
 4. Add tailwindcss to our project
-   ´´´
-   yarn add -D tailwindcss postcss autoprefixer
-   ´´´
+
+```
+yarn add -D tailwindcss postcss autoprefixer
+```
 
 5. Initialize tailwindcss configuration
-   ´´´
-   npx tailwindcss init -p
-   ´´´
+
+```
+npx tailwindcss init -p
+```
 
 6. Add axios for making http requests
-   ´´´
-   yarn add axios
-   ´´´
+
+```
+yarn add axios
+```
 
 7. Add prettier to the project for code formatting by executing the following command
-   ´´´
-   yarn add -D prettier eslint-plugin-prettier eslint-config-prettier
-   ´´´
+
+```
+yarn add -D prettier eslint-plugin-prettier eslint-config-prettier
+```
