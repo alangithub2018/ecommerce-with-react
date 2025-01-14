@@ -50,3 +50,9 @@ yarn add axios
 ```
 yarn add -D prettier eslint-plugin-prettier eslint-config-prettier
 ```
+
+8. Add heroicons to display nice icons into the interface by running following command
+
+```
+yarn add @heroicons/react@v1
+```
